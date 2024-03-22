@@ -76,6 +76,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        homeClearBT: homeClearBT {
+            compatible = "zmk,behavior-mod-morph";
+            label = "HOMECLEARBT";
+            bindings = <&kp HOME>, <&bt BT_CLR_ALL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -95,12 +104,12 @@
             //               `----------------------------------' '----------------------------------'
 
             bindings = <
-&kp ESC         &kp N1            &kp N2              &kp N3          &kp N4            &kp N5                                 &kp N6  &kp N7          &kp N8         &kp N9      &kp N0         &forwardDelete
-&kp TAB         &kp Q             &kp D               &kp R           &kp W             &kp B                                  &kp J   &kp F           &kp U          &kp P       &kp SEMICOLON  &kp LEFT_BRACKET
-&kp LEFT_SHIFT  &kp A             &kp S               &kp H           &kp T             &kp G                                  &kp Y   &kp N           &kp E          &kp O       &kp I          &kp RIGHT_BRACKET
-&kp LCTRL       &kp Z             &kp X               &kp M           &kp C             &kp V                                  &kp K   &kp L           &kp COMMA      &kp PERIOD  &kp SLASH      &kp ENTER
-                                  &kp LEFT_ALT        &kp LEFT_WIN    &kp C_PREVIOUS    &mo 2            &kp SPACE  &kp SPACE  &mo 1   &kp LEFT_SHIFT  &kp RIGHT_WIN  &win_bt
-&kp C_REWIND    &kp C_PLAY_PAUSE  &kp C_FAST_FORWARD  &kp LEFT_ARROW  &kp C_PLAY_PAUSE  &kp RIGHT_ARROW
+&kp ESC         &kp N1      &kp N2        &kp N3          &kp N4            &kp N5                                 &kp N6  &kp N7          &kp N8         &kp N9      &kp N0         &forwardDelete
+&kp TAB         &kp Q       &kp D         &kp R           &kp W             &kp B                                  &kp J   &kp F           &kp U          &kp P       &kp SEMICOLON  &kp LEFT_BRACKET
+&kp LEFT_SHIFT  &kp A       &kp S         &kp H           &kp T             &kp G                                  &kp Y   &kp N           &kp E          &kp O       &kp I          &kp RIGHT_BRACKET
+&kp LCTRL       &kp Z       &kp X         &kp M           &kp C             &kp V                                  &kp K   &kp L           &kp COMMA      &kp PERIOD  &kp SLASH      &kp ENTER
+                            &kp LALT      &kp LEFT_WIN    &homeClearBT      &mo 2            &kp SPACE  &kp SPACE  &mo 1   &kp LEFT_SHIFT  &kp RIGHT_WIN  &win_bt
+&kp C_VOL_DN    &kp K_MUTE  &kp C_VOL_UP  &kp LEFT_ARROW  &kp C_PLAY_PAUSE  &kp RIGHT_ARROW
             >;
         };
 
